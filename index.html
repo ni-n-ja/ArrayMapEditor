@@ -1,46 +1,52 @@
 <!DOCTYPE HTML>
 <html>
 
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <link rel="stylesheet" type="text/css" href="style.css" />
-  <link rel="icon" href="ninja.ico" type="image/x-icon">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap.min.js"></script>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="icon" href="ninja.ico" type="image/x-icon">
+        <!--
+        <script type="text/javascript" src="angular.min.js"></script>
+        <script type="text/javascript" src="ui-bootstrap.min.js"></script>
+        -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.4/ui-bootstrap.min.js"></script>
 
+        <script type="text/javascript" src="web.js"></script>
+        <title>ni_n_ja</title>
+    </head>
 
-  <script type="text/javascript " src="web.js ">
-  </script>
-  <title>ni_n_ja</title>
-</head>
+    <body ng-app="myApp" ng-controller="matrixEditorController">
+        <div id="header">
+            <h3>ガバガバMAPエディタ</h3>
+        </div>
 
-<body ng-app="myApp" ng-controller="matrixEditorController">
-  <div id="header">
-    <h3>ガバガバMAPエディタ</h3>
-  </div>
+        <div id="main">
+            <div id="content">
+                <div class="size">
+                    <textarea class="arraySize" id="width" ng-model="width"></textarea>
+                    <textarea class="arraySize" id="height" ng-model="height"></textarea>
+                    {{width}}
+                    {{height}}
+                </div>
 
-  <div id="main">
-    <div id="content">
+                <div id="matrix">
+                    <table id="target">
+                        <tr ng-repeat="row in a track by $index" class="grid">
+                            <td ng-repeat="cell in row track by $index" class="grid">
+                                {{cell}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
 
-      <div id="matrix">
-        <table id="target">
-          <tr ng-repeat="row in a track by $index" class="grid">
-            <td ng-repeat="cell in row track by $index" class="grid">
-              {{cell}}
-            </td>
-          </tr>
-        </table>
-      </div>
+                <div id="text" ng-model="aaaa">
+                    <textarea id="textarea" name="result" ng-model="aaaa"></textarea>
+                </div>
+            </div>
+        </div>
 
-      <div id="text" ng-model="aaaa">
-        <textarea id="textarea" name="result" ng-model="aaaa"></textarea>
-        {{aaaa}}
-      </div>
-    </div>
-  </div>
+        <div id="footer">💩うんち💩
+        </div>
 
-  <div id="footer">💩うんち💩
-  </div>
-
-
-</html>
+    </html>
